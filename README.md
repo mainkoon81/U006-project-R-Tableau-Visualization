@@ -47,13 +47,46 @@ __Investigation:__ Is your city hotter or cooler on average compared to the glob
 ----------------------------------------------------------------------
 #### >Part-02. Visualizing Movie Data
 
-__Data:__ The Data were collected recording votes in the Irish parliament (D´ailEireann), prior to the general election, in early 2016. Extra details of the votes can 
+__Data:__ The Movie Database data can be found in (https://www.themoviedb.org/?language=en) - 'movies.csv', and a breakdown of what every field (column) means:
+ - **id:** Identification number
+ - **imdb_id:** IMDB identification number
+ - **popularity:** Relative number of page views on The Movie Database
+ - **budget:** Budget in USD
+ - **revenue:** Revenue in USD
+ - **original_title:** Movie title
+ - **cast:** list of cast members separated by |, max five actors
+ - **homepage:** URL for the movie homepage
+ - **director:** list of directors separated by |, max five directors
+ - **tagline:** Tagline for the movie
+ - **keywords:** list of keywords associated with the movie, separated by |, max five keywords
+ - **overview:** Summary of the plot
+ - **runtime:** Movie runtime in minutes
+ - **genres:** list of genres separated by |, max five genres
+ - **production_companies:** list of production companies separated by |, max five companies
+ - **release_date:** Original release date
+ - **vote_count:** Number of votes
+ - **vote_average:** Average of votes
+ - **release_year:** Release year
+ - **budget_adj:** Budget adjusted for inflation, in 2010 US dollars
+ - **revenue_adj:** Revenue adjusted for inflation, in 2010 US dollars
   
+__Story:__ Our client is a new movie production company looking to make a new movie. The client wants to make sure it’s successful to help make a name for the new company. They are relying on you to help understand movie trends to help inform their decision making. They’ve given you guidance to look into three specific areas:
+
+ - Question 1: How have movie genres changed over time?
+ - Question 2: How do the attributes differ between Universal Pictures and Paramount Pictures?
+ - Question 3: How have movies based on novels performed relative to movies not based on novels?
+
+On top of that, the client asked you to explore one other question that you find interesting based on the data provided.  
   
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
   
 
 
