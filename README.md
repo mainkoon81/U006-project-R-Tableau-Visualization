@@ -28,7 +28,33 @@ Let’s say the dataset contains ‘daily sales data’ from 01-01-2009 to 03-31
 
 __Investigation:__ Is your city hotter or cooler on average compared to the global average? Has the difference been consistent over time? How do the changes in your city’s temperatures over time compare to the changes in the global average? What does the overall trend look like? Is the world getting hotter or cooler? Has the trend been consistent over the last few hundred years?
 
+ - Step 01. Extract the data from the database.(global/local)
+```
+SELECT *
+FROM global_data ;
 
+SELECT *
+FROM city_data
+WHERE city IN ('Dublin','Seoul','Houston');
+```
+ - Step 02. Open up the CSV (via R).
+```
+global <- read.csv('C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L1/results_global.csv')
+str(global)  #Dimension: 266x2, #factor: NA
+sum(is.na(global))  #missing value check: no NA
+head(global,10)
+
+local_DSH <- read.csv('C:/Users/Minkun/Desktop/classes_1/NanoDeg/1.Data_AN/L1/results_DSH.csv')
+str(local_DSH)  #Dimension: 640x4, #factor: city
+table(local_DSH$city)  
+sum(is.na(local_DSH))  #missing value check: 4 NA 
+apply(apply(local_DSH,2,is.na), 2, sum)  #4 NA in 'avg_temp in Dublin'
+head(local_DSH, 10)
+```
+We found factors. let's compare summary of data that the factor has. 
+```
+by(local_DSH$avg_temp, local_DSH$city, summary)
+```
 
 
 
