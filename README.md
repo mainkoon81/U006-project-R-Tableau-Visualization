@@ -55,7 +55,7 @@ We found factors. let's compare summary of data that the factor has.
 ```
 by(local_DSH$avg_temp, local_DSH$city, summary)
 ```
-
+<img src="https://user-images.githubusercontent.com/31917400/34846115-0bcca222-f70f-11e7-9d4b-528bf54fabe7.jpg" width="400" height="150" />
 
 
 
