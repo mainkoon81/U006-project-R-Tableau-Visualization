@@ -57,11 +57,27 @@ by(local_DSH$avg_temp, local_DSH$city, summary)
 ```
 <img src="https://user-images.githubusercontent.com/31917400/34846115-0bcca222-f70f-11e7-9d4b-528bf54fabe7.jpg" width="400" height="150" />
 
-
-
-
-
-
+Create a line chart that compares your city’s temperatures with the global temperatures.
+ - To compare each line-chart within one single plot, we need a dataframe that contains all of them. 
+```
+city <- rep('Global', 266) 
+global2 <- cbind(city, global); head(global2,10)
+glo_cal <- merge(global2, local_DSH, by='year')
+glo_cal <- glo_cal[-5]
+str(glo_cal) 
+sum(is.na(glo_cal))
+head(glo_cal,10)
+```
+ - To find a way to combine two columns of factors into one column without changing the factor levels
+```
+df1 <- data.frame(year=glo_cal$year, city=glo_cal$city.x, avg_temp=glo_cal$avg_temp.x); df1
+df2 <- data.frame(year=glo_cal$year, city=glo_cal$city.y, avg_temp=glo_cal$avg_temp.y); df2
+df3 <- merge(df1, df2, by=c('year', 'city', 'avg_temp'), all.x = T, all.y = T); head(df3,10)
+```
+ - Plot: We want to see `avg_temp`'s distribution in global - The average temp in global seems to be normally distributed. 
+```
+ggplot(aes(x=avg_temp), data = global) + geom_histogram(binwidth = 0.1, color=I('black'), fill=I('#F79420'))
+```
 
 
 
