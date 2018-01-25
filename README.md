@@ -94,8 +94,82 @@ ggplot(aes(x=avg_temp, y= ..count../sum(..count..)), data=local_DSH) + geom_freq
 ```
 <img src="https://user-images.githubusercontent.com/31917400/35414406-48819766-021a-11e8-82cd-75e45f8beeaf.jpeg" />
 
+ - We want to examine correlation between year and avg_temp. - Well…it’s 0.228 which is closer to 0. So we can Say that the relationship is not that significant, or the relationship is not linear or not monotonic. I mean not flat, but it can be a cyclical relationship.
+```
+cor.test(local_DSH$avg_temp, local_DSH$year, method = 'pearson')
+cor.test(local_DSH$avg_temp, local_DSH$year, method = 'spearman')
+```
+/// 0.2286571, 0.3798407
 
+ - So let's zoom in for a 20 year interval - We can check some cyclical relationships.
+```
+ggplot(aes(x=year, y=avg_temp), data = local_DSH) + geom_point(aes(color=city)) +
+  coord_cartesian(xlim = c(1990, 2013)) 
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415261-e754c0c8-021c-11e8-9dac-e64ce7cae448.jpeg" width="480" height="300" />
 
+ - We want to see trends of global
+```
+ggplot(aes(x=year, y=avg_temp), data=global) + geom_line()
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415374-43f629d4-021d-11e8-8f09-7bfce33186d5.jpeg" width="430" height="260" />
+
+ - We want to see trends of Dublin/Seoul/Houston
+```
+ggplot(aes(x=year, y=avg_temp), data=local_DSH) + geom_line() + facet_wrap(~city)
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415448-8af2754a-021d-11e8-80b0-ccd77e1c30b0.jpeg" width="430" height="260" />
+
+well..in general, the global trends are highly variable for avg_temp. In 1700 to 1900, the avg_temp is hovering about over 8ºC but after 1900, the avg_temp soared up from 8ºC to 10ºC with reaching a plateau (temporary layoff) between 1950 to 1975 hovering around 8.7ºC, and this rise still continues these days. I believe the global, and major cities temperature underwent dramatic changes with the rise of industrial age around 1900. So we can break the whole time period into two - before 1900 and after 1900. AND Our focus is on after 2000! 
+```
+ggplot(aes(x=year, y=avg_temp), data=subset(global, year>=1900)) + geom_line() +  
+scale_x_continuous(limits = c(2000,2013), breaks = seq(2000,2013, 2)) + geom_smooth()
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415525-d16542c8-021d-11e8-9d0a-f1b766617d5a.jpeg" width="430" height="260" />
+
+What we can see here is that first, the global trend shows more variability than those of other major cities selected. 
+```
+ggplot(aes(x=year, y=avg_temp), data=subset(local_DSH, year>=1900)) + geom_line() + facet_wrap(~city) +
+  scale_x_continuous(limits = c(2000,2013), breaks = seq(2000,2013, 2)) + geom_smooth()
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415590-0e5a3c60-021e-11e8-986a-773d67b83d73.jpeg" width="430" height="260" />
+
+__[Smoothing out with moving averages]__
+
+If increasing the size of bins, cutting our graph in pieces and averaging those mean-counts together, we can make them lumped into one points. We know that the year variable is very discreet. We'll have the months from January to December, but in reverse, we can lump 10 or more years into one point! and they'll repeat over and over again. Now I want to step every 15 years and every 5 years, then compare them. #why summary? coz we want not the collapsed avg_temp, but the means of each piece.
+```
+a= ggplot(aes(x=round(year/15)*15, y=avg_temp), data=subset(global, year>=1900)) + geom_line() +  
+  scale_x_continuous(limits = c(1900,2013), breaks = seq(1905,2010, 15)) + geom_smooth();a
+
+a2= ggplot(aes(x=round(year/5)*5, y=avg_temp), data=subset(global, year>=1900)) + geom_line(stat = 'summary', fun.y=mean) +  
+  scale_x_continuous(limits = c(1900,2013), breaks = seq(1905,2010, 15)) + geom_smooth();a2 
+  
+grid.arrange(a, a2, ncol=1)
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415735-911eb8ba-021e-11e8-832d-5982898545e1.jpeg" width="430" height="260" />
+
+```
+b= ggplot(aes(x=round(year/15)*15, y=avg_temp), data=subset(local_DSH, year>=1900)) + geom_line() + 
+  facet_wrap(~city) + scale_x_continuous(limits = c(1900,2013), breaks = seq(1905,2010, 15)) + geom_smooth(); b
+
+b2= ggplot(aes(x=round(year/5)*5, y=avg_temp), data=subset(local_DSH, year>=1900)) + geom_line(stat = 'summary', fun.y=mean) + 
+  facet_wrap(~city) + scale_x_continuous(limits = c(1900,2013), breaks = seq(1905,2010, 15)) + geom_smooth(); b2
+
+grid.arrange(b, b2, ncol=1)
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415827-e81f053e-021e-11e8-8bf2-7e3500195949.jpeg" width="430" height="260" />
+
+### PUT THEM TOGETHER
+```
+c= ggplot(aes(x=year, y=avg_temp), data=df3) + 
+  geom_line(aes(color=city)); c
+
+c2= ggplot(aes(x=round(year/5)*5, y=avg_temp), data=subset(df3, year>=1900)) + 
+  geom_line(aes(color=city), stat = 'summary', fun.y=mean); c2
+
+grid.arrange(c, c2, ncol=1)
+```
+<img src="https://user-images.githubusercontent.com/31917400/35415908-261753a0-021f-11e8-8170-64c1cce01150.jpeg" width="430" height="260" />
 
 ----------------------------------------------------------------------
 #### >Part-02. 
