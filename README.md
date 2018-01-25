@@ -57,7 +57,7 @@ by(local_DSH$avg_temp, local_DSH$city, summary)
 ```
 <img src="https://user-images.githubusercontent.com/31917400/35399901-521af376-01ed-11e8-96ea-3edab8ba62d2.jpg" width="450" height="450" />
 
-Create a line chart that compares your city’s temperatures with the global temperatures.
+Create a line chart that compares your **city’s temperatures** with the **global temperatures**.
  - To compare each line-chart within one single plot, we need a dataframe that contains all of them. 
 ```
 city <- rep('Global', 266) 
@@ -74,14 +74,22 @@ df1 <- data.frame(year=glo_cal$year, city=glo_cal$city.x, avg_temp=glo_cal$avg_t
 df2 <- data.frame(year=glo_cal$year, city=glo_cal$city.y, avg_temp=glo_cal$avg_temp.y); df2
 df3 <- merge(df1, df2, by=c('year', 'city', 'avg_temp'), all.x = T, all.y = T); head(df3,10)
 ```
- - Plot: We want to see `avg_temp`'s distribution in global - The average temp in global seems to be normally distributed. 
+<img src="https://user-images.githubusercontent.com/31917400/35413929-df134bfe-0218-11e8-9732-77a67f7bd515.jpg" width="480" height="450" />
+
+ - Plot I: We want to see `avg_temp`'s distribution in global - The average temp in global seems to be normally distributed. 
 ```
 ggplot(aes(x=avg_temp), data = global) + geom_histogram(binwidth = 0.1, color=I('black'), fill=I('#F79420'))
 ```
+<img src="https://user-images.githubusercontent.com/31917400/35414135-88a2c1cc-0219-11e8-8828-8413db1b1cd0.jpeg" />
 
-
-
-
+ - Plot II: We want to see `avg_temp`'s distribution in local by city- Dublin / Seoul / Houston - The average temp in each city seem to be normally distributed. Interestingly, the avg_temp trend in Dublin shows much stronger consistency compared to the other two cities, which is underpinned by the heavy concentration around the mean of its avg_temp’s counts. 
+```
+ggplot(aes(x=avg_temp), data = local_DSH) + geom_histogram(binwidth = 0.1, color=I('black'), fill=I('#F79420')) + 
+  facet_wrap(~city)
+ggplot(aes(x=avg_temp), data=local_DSH) + geom_freqpoly(aes(color=city), binwidth =0.1)
+ggplot(aes(x=avg_temp, y= ..count../sum(..count..)), data=local_DSH) + geom_freqpoly(aes(color=city), binwidth =0.1)
+```
+<img src="https://user-images.githubusercontent.com/31917400/35414406-48819766-021a-11e8-82cd-75e45f8beeaf.jpeg" />
 
 
 
