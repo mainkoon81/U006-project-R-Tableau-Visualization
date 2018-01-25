@@ -78,6 +78,9 @@ df3 <- merge(df1, df2, by=c('year', 'city', 'avg_temp'), all.x = T, all.y = T); 
 
  - Plot I: We want to see `avg_temp`'s distribution in global - The average temp in global seems to be normally distributed. 
 ```
+library(ggplot2)
+library(gridExtra)
+
 ggplot(aes(x=avg_temp), data = global) + geom_histogram(binwidth = 0.1, color=I('black'), fill=I('#F79420'))
 ```
 <img src="https://user-images.githubusercontent.com/31917400/35414135-88a2c1cc-0219-11e8-8828-8413db1b1cd0.jpeg" />
