@@ -6,7 +6,7 @@ __Part-01.__ Exploring Weather Trends
   - language: R
   - func:
 
-__Part-02.__ Visualizing Movie Data
+__Part-02.__ 
   - language: Tableau
   - func: 
 
@@ -55,7 +55,7 @@ We found factors. let's compare summary of data that the factor has.
 ```
 by(local_DSH$avg_temp, local_DSH$city, summary)
 ```
-<img src="https://user-images.githubusercontent.com/31917400/34846115-0bcca222-f70f-11e7-9d4b-528bf54fabe7.jpg" width="400" height="150" />
+<img src="https://user-images.githubusercontent.com/31917400/35399901-521af376-01ed-11e8-96ea-3edab8ba62d2.jpg" width="450" height="450" />
 
 Create a line chart that compares your city’s temperatures with the global temperatures.
  - To compare each line-chart within one single plot, we need a dataframe that contains all of them. 
@@ -87,40 +87,9 @@ ggplot(aes(x=avg_temp), data = global) + geom_histogram(binwidth = 0.1, color=I(
 
 
 ----------------------------------------------------------------------
-#### >Part-02. Visualizing Movie Data
+#### >Part-02. 
 
-__Data:__ The Movie Database data can be found in (https://www.themoviedb.org/?language=en) - 'movies.csv', and a breakdown of what every field (column) means:
- - **id:** Identification number
- - **imdb_id:** IMDB identification number
- - **popularity:** Relative number of page views on The Movie Database
- - **budget:** Budget in USD
- - **revenue:** Revenue in USD
- - **original_title:** Movie title
- - **cast:** list of cast members separated by |, max five actors
- - **homepage:** URL for the movie homepage
- - **director:** list of directors separated by |, max five directors
- - **tagline:** Tagline for the movie
- - **keywords:** list of keywords associated with the movie, separated by |, max five keywords
- - **overview:** Summary of the plot
- - **runtime:** Movie runtime in minutes
- - **genres:** list of genres separated by |, max five genres
- - **production_companies:** list of production companies separated by |, max five companies
- - **release_date:** Original release date
- - **vote_count:** Number of votes
- - **vote_average:** Average of votes
- - **release_year:** Release year
- - **budget_adj:** Budget adjusted for inflation, in 2010 US dollars
- - **revenue_adj:** Revenue adjusted for inflation, in 2010 US dollars
-  
-__Story:__ Our client is a new movie production company looking to make a new movie. The client wants to make sure it’s successful to help make a name for the new company. They are relying on you to help understand movie trends to help inform their decision making. They’ve given you guidance to look into three specific areas:
-
- - Question 1: **How have movie genres changed over time?**
- - Question 2: **How do the attributes differ between Universal Pictures and Paramount Pictures?**
- - Question 3: **How have movies based on novels performed relative to movies not based on novels?**
-
-On top of that, the client asked you to explore one other question that you find interesting based on the data provided.  
-  
-
+__Data:__ 
 
 
 
