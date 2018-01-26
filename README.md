@@ -13,7 +13,7 @@ __Part-02.__
 ----------------------------------------------------------------------
 #### >Part-01. Exploring Weather Trends
 
-__Data:__ The Data were collected recording votes in the Irish parliament (D´ailEireann), prior to the general election, in early 2016. Extra details of the votes can be found at (http://www.oireachtas.ie/parliament/) and the data are for the votes on January 14th-28th.
+__Data:__ The Data were collected from (https://www.carbonbrief.org/explainer-how-do-scientists-measure-global-temperature)
 There are three tables in the database:
 	city_list :  This contains a list of cities and countries in the database. 
 	city_data :  This contains the average temperatures for each city by year (ºC).
