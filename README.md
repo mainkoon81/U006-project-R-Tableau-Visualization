@@ -15,9 +15,9 @@ __Part-02.__
 
 __Data:__ The Data were collected from (https://www.carbonbrief.org/explainer-how-do-scientists-measure-global-temperature)
 There are three tables in the database:
-	city_list :  This contains a list of cities and countries in the database. 
-	city_data :  This contains the average temperatures for each city by year (ºC).
-	global_data :  This contains the average global temperatures by year (ºC).
+ - city_list :  This contains a list of cities and countries in the database. 
+ - city_data :  This contains the average temperatures for each city by year (ºC).
+ - global_data :  This contains the average global temperatures by year (ºC).
 
 __Story:__ Global temperature has been a hot topic in recent years as politicians argue over climate policy. Temperature data around the world is an important part of this conversation. To measure temperature data, scientists combine measurements from the air and ocean surface. This data is collected by weather stations on land and in the ocean. I want to analyze LOCAL and GLOBAL temperature data to compare 'the temperature trends where I live' TO 'overall global temperature trends'. This project requires the following steps:
   -	Extract data from a database using a SQL query
