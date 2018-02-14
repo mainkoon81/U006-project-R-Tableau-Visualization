@@ -7,6 +7,10 @@ __Part-01.__ Exploring Weather Trends
   - func:
 
 __Part-02.__ 
+  - language: R
+  - func:
+
+__Part-03.__ 
   - language: Tableau
   - func: 
 
