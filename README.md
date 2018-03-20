@@ -186,7 +186,7 @@ __Data:__
 ----------------------------------------------------------------------
 #### >Part-03. Airline On-Time Statistics and Delay Causes_2008
 
-__Data:__ The Data were collected from (http://stat-computing.org/dataexpo/2009/the-data.html)
+__Data:__ The Data were collected from(http://stat-computing.org/dataexpo/2009/the-data.html)
 
 There are 29 fileds in the dataset:
  - 1	Year:	2008
@@ -218,7 +218,17 @@ There are 29 fileds in the dataset:
  - 27	NASDelay:	in minutes
  - 28	SecurityDelay:	in minutes
  - 29	LateAircraftDelay:	in minutes
+ 
+The data comes originally from RITA where it is described in detail(https://www.transtats.bts.gov/Fields.asp?Table_ID=236)
 
-  
+__Story:__ The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics (BTS) tracks the on-time performance of domestic flights operated by large air carriers. Summary information on the number of on-time, delayed, canceled and diverted flights appears in DOT's monthly Air Travel Consumer Report(https://www.transportation.gov/airconsumer/air-travel-consumer-reports), published about 30 days after the month's end, as well as in summary tables posted on this website. BTS began collecting details on the causes of flight delays in June 2003. Summary statistics and raw data are made available to the public at the time the Air Travel Consumer Report is released(https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp)
+ - Delay Cause Definition(https://www.bts.dot.gov/explore-topics-and-geography/topics/airline-time-performance-and-causes-flight-delays)
+ - Understanding Delay Data(https://www.bts.gov/topics/airlines-and-airports/understanding-reporting-causes-flight-delays-and-cancellations)
+ - Flight Delays at a Glance(https://www.transtats.bts.gov/HomeDrillChart.asp)
+
+## Investigate the performance of flights over time or simply look at data for a given year and create a graphic that showcases your finding(s).
+
+
+ 
 
 
