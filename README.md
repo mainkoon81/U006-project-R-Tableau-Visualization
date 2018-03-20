@@ -205,8 +205,8 @@ There are 29 fileds in the dataset:
  - 14	AirTime:	in minutes
  - 15	ArrDelay:	arrival delay, in minutes
  - 16	DepDelay:	departure delay, in minutes
- - 17	Origin:	origin IATA airport code
- - 18	Dest:	destination IATA airport code
+ - 17	Origin:	origin IATA airport code(http://stat-computing.org/dataexpo/2009/supplemental-data.html)
+ - 18	Dest:	destination IATA airport code(http://stat-computing.org/dataexpo/2009/supplemental-data.html)
  - 19	Distance:	in miles
  - 20	TaxiIn:	taxi in time, in minutes
  - 21	TaxiOut:	taxi out time in minutes
