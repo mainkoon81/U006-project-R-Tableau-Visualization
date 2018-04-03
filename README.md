@@ -176,7 +176,7 @@ grid.arrange(c, c2, ncol=1)
 <img src="https://user-images.githubusercontent.com/31917400/35415908-261753a0-021f-11e8-8170-64c1cce01150.jpeg" width="430" height="260" />
 
 ----------------------------------------------------------------------
-#### >Part-02. 
+#### >Part-02. Investigating Wine Quality
 
 __Data:__ 
 
