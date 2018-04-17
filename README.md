@@ -13,6 +13,7 @@ __Part-02.__
 __Part-03.__ 
   - language: Tableau
   - func: 
+  - Tableau Public: https://public.tableau.com/profile/minkun.kim#!/ 
 
 ----------------------------------------------------------------------
 #### >Part-01. Exploring Weather Trends
