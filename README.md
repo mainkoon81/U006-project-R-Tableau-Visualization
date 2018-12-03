@@ -349,5 +349,5 @@ It is supplemented by these tables:
  - GIDP:           Grounded into double plays
 
 ------------------------------------------------------------------------------
-
+### AVG-BATS: H/AB 
 
