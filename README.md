@@ -230,8 +230,8 @@ __Story:__ The U.S. Department of Transportation's (DOT) Bureau of Transportatio
 ## Investigate the performance of flights over time or simply look at data for a given year and create a graphic that showcases your finding(s).
 
 
- ----------------------------------------------------------------------
-#### >Part-04. Airline On-Time Statistics and Delay Causes_2008
+----------------------------------------------------------------------
+#### >Part-04. The Lahman Baseball Database
 
 __Data:__ The Data were collected from(http://www.seanlahman.com/baseball-archive/statistics/)
 
@@ -276,9 +276,7 @@ E-Mail : seanlahman@gmail.com
 
 If you're interested in contributing to the maintenance of this 
 database or making suggestions for improvement, please consider
-joining our mailinglist at:
-
-    http://groups.yahoo.com/group/baseball-databank/
+joining our mailinglist at http://groups.yahoo.com/group/baseball-databank/
 
 If you are interested in similar databases for other sports, please
 vist the Open Source Sports website at http://OpenSourceSports.com
