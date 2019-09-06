@@ -1,4 +1,4 @@
-# project-R-Tableau-Visualization
+# project-R-vs-Tableau
 
 ### [Contents] 
 
